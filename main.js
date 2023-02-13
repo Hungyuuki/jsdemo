@@ -120,3 +120,59 @@ const result2 = numbers2.reduce2((total, number, index, array) => {
     console.log(total, number, index, array);
     return total + number}, 0)
 console.log(result2);
+
+
+
+
+console.log(courses.includes({id: 5, name: 'php', price: 0}));
+
+
+
+
+//callback
+/**
+ * là hàm được truyền qua đối số khi gọi hàm khác
+ * 
+ * 1: là hàm
+ * 2: được truyền qua đối số
+ */
+function myFunction(str, param) {
+    if(typeof param === 'function')//phải check là function 
+    //vì chỉ có function thì mới dùng để truyền được đối số
+    param("Ngày xưa có một con bò")
+}
+
+function myCallback(value) {
+    console.log(value)
+}
+
+myFunction(myCallback)
+
+
+Array.prototype.map2 = function(callback) {//Định nghĩa hàm map2, callback là tên một function
+    var output=[];//output là mảng mới mà hàm map2 sẽ trả về
+    var arrayLength = this.length;
+    for(var i = 0; i < arrayLength; ++i){
+        var result = callback(this[i], i);
+        output.push(result)//đưa từng phần tử vừa xử lý vào mảng mới
+    }
+    return output;
+}
+var courses = [
+    'reactjs',
+    'nodejs',
+    'ruby',
+    'C#',
+    'php'
+];
+// var htmls = courses.map(function(course) {
+//     return `<h2>${course}</h2>`;
+// });
+// console.log(htmls.join(' '))
+
+
+var htmls = courses.map2(function(course){
+    return `<h2>${course}</h2>`;
+});
+console.log(htmls);
+
