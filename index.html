@@ -5,11 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        };
+        .white {
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div class="box">
-        <a id="heading" class="heading">Heading</a>
+    <div class="innerText">
+        <!-- <h1 id="heading" class="heading">
+            <span style="display: none;">Heading</span>
+            <span>Text</span>
+            <style>
+                .new {
+                    width: 50px;
+                    height: 50px;
+                    color: red;
+                }
+            </style>
+        </h1> -->
+        <!-- value Heading của thẻ h1 là 1 textNode -->
     </div>
+
+    <div title="boxElement" class="box box-2" class="box-3">
+        <h1 onclick="console.log(this)">
+            <span>DOM Events</span>
+        </h1>
+        <!-- <h1 style="margin: 4px">This is Heading</h1> -->
+    </div>
+    <script src="./domEvents.js"></script>
 </body>
-    <script src="./Attribute&Text.js"></script>
 </html>
