@@ -39,7 +39,7 @@
 // })
 
 // //promise.resolve
-// var promise = Promise.resolve('Success')
+// var promise = Promise.resolve('Success') //tạo nhanh promise luôn ở trạng thái thành công
 
 // promise
 // .then((result)=>{
@@ -74,10 +74,14 @@ var arr2 = new Promise(
     }, 4000)
 })
 
-Promise.all([arr1, arr2])//hiển thị song song arr1 và arr2
-.then(function(result) {
+Promise.all([arr1, arr2])//Đối số là 1 mảng, gồm các thành phần cần chạy song song, ở đây là arr1 và arr2
+.then(function(result) {//khi các đối số của .all được resolve thì mới vào dược .then(),
+    // và kết quả trả về của .then() cũng là một mảng
     // console.log(result)
     var result1 = result[0];
     var result2 = result[1];
     console.log(result1.concat(result2))
+})
+.catch((err)=> {
+    console.log(err)
 })

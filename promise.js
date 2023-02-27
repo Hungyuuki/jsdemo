@@ -17,7 +17,10 @@
  * fetch(call API), gọi 1 yêu cầu qua mạng, ko biết khi nào gọi xong
  * XMLHttpRequest, 
  * readingFile,
- * request animation frame,
+ * request animation frame, ...
+ * -JSON SERVER: Fake API
+ * -CRUD 
+ * 
  */
 
 //sleep 1 giây
